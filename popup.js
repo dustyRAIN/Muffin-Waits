@@ -56,8 +56,14 @@ function stopReload() {
 
 
 
-document.getElementById("muffin_name").addEventListener("click", goToMuffinTime);
+document.getElementById("muffin_name").addEventListener("click", goToMuffinFeedback);
 document.getElementById("muffin_time").addEventListener("click", goToMuffinTime);
+
+function goToMuffinFeedback() {
+    chrome.tabs.create({ url: "https://forms.gle/ERHR7LSAtrdkZQ6j7" }, function() {
+        console.log("My best friend Mahir Tahmid introduced to me this song.");
+    });
+}
 
 function goToMuffinTime() {
     chrome.tabs.create({ url: "https://www.youtube.com/watch?v=LACbVhgtx9I" }, function() {
