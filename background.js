@@ -72,7 +72,8 @@ function processUrl(url) {
     var pat3 = new RegExp(/^(https:\/\/www\.|https:\/\/|http:\/\/www\.|http:\/\/)?(meet[\.]{1}google[\.]{1}com){1}(\/)?_meet(\/)?whoops[a-z\-\?0-9\=\&]*(\/)?/gi);
     var pat2 = new RegExp(/^(https:\/\/www\.|https:\/\/|http:\/\/www\.|http:\/\/)?(meet[\.]{1}google[\.]{1}com){1}\/lookup(\/)?[a-z\-\?0-9\=\&]*(\/)?/gi);
     var pat1 = new RegExp(/^(https:\/\/www\.|https:\/\/|http:\/\/www\.|http:\/\/)?(meet[\.]{1}google[\.]{1}com){1}\/[a-z]{3}\-[a-z]{4}\-[a-z]{3}(\/)?/gi);
-    if (url.match(pat1)) {
+    var pat0 = new RegExp(/^(https:\/\/www\.|https:\/\/|http:\/\/www\.|http:\/\/)?(meet[\.]{1}google[\.]{1}com){1}(\/)?_meet(\/)?[a-z]{3}\-[a-z]{4}\-[a-z]{3}[a-z\-\?0-9\=\&]*(\/)?/gi);
+    if (url.match(pat1) || url.match(pat0)) {
         reloading = false;
         stopReload();
         notifyUser();
